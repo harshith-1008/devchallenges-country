@@ -1,3 +1,4 @@
+//this component is just to display the column names --
 import React from "react";
 
 export default function Info(){

@@ -1,3 +1,4 @@
+//actual code which displays the countries --
 import React from "react";
 
 export default function Display(props){

@@ -1,3 +1,4 @@
+//this comppnent is for background image/content --
 import React from "react";
 import backgroundimg from "./assets/hero-image-wr.jpg"
 
@@ -12,7 +13,7 @@ export default function Background(){
 <rect y="9.86725" width="14.6667" height="4.4" rx="2" fill="#4E80EE"/>
 <rect y="4" width="7.33333" height="4.4" rx="2" fill="#4E80EE"/>
 </svg>
-            <div className="h-screen w-screen absolute bg-[#1B1D1F]"></div>
+            <div className="h-full w-screen absolute bg-[#1B1D1F]"></div>
         </div>
     )
 }

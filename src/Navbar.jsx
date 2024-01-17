@@ -1,3 +1,5 @@
+//this component displays the number of contires w.r.t the filters --
+
 import React from "react";
 
 export default function Navbar(props){
