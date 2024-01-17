@@ -15,28 +15,28 @@ export default function Filters(props){
             <div className="flex flex-col mb-8">
                 <h1 className="mb-2 text-[#6C727F] items-center">Region</h1>
                     <div className="flex flex-row flex-wrap">
-                        <label className="mr-4 mb-1 items-center checkbox-label rounded-md p-[0.15rem]">
-                            <input type="checkbox" value="isAmericas" className="" onChange={(e) => props.changeRegion(e.target.value)}/>
+                        <label className="mr-4 mb-1 items-center checkbox-label rounded-md p-[0.15rem] flex justify-center">
+                            <input type="checkbox" value="isAmericas" className="mr-1" onChange={(e) => props.changeRegion(e.target.value)}/>
                             Americas
                         </label>
-                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem]">
-                            <input type="checkbox" value="isAntarctica" className="" onChange={(e) => props.changeRegion(e.target.value)}/>
+                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem] flex justify-center">
+                            <input type="checkbox" value="isAntarctica" className="mr-1" onChange={(e) => props.changeRegion(e.target.value)}/>
                             Antarctic
                         </label>
-                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem]">
-                            <input type="checkbox" value="isAfrica" className="" onChange={(e) => props.changeRegion(e.target.value)}/>
+                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem] flex justify-center">
+                            <input type="checkbox" value="isAfrica" className="mr-1" onChange={(e) => props.changeRegion(e.target.value)}/>
                             Africa
                         </label>
-                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem]">
-                            <input type="checkbox" value="isAsia" className="" onChange={(e) => props.changeRegion(e.target.value)}/>
+                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem] flex justify-center">
+                            <input type="checkbox" value="isAsia" className="mr-1" onChange={(e) => props.changeRegion(e.target.value)}/>
                             Asia
                         </label>
-                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem]">
-                            <input type="checkbox" value="isEurope" className="" onChange={(e) => props.changeRegion(e.target.value)}/>
+                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem] flex justify-center">
+                            <input type="checkbox" value="isEurope" className="mr-1" onChange={(e) => props.changeRegion(e.target.value)}/>
                             Europe
                         </label>
-                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem]">
-                            <input type="checkbox" value="isOceania" className="" onChange={(e) => props.changeRegion(e.target.value)}/>
+                        <label className="mr-5 mb-1 items-center checkbox-label rounded-md p-[0.15rem] flex justify-center">
+                            <input type="checkbox" value="isOceania" className="mr-1" onChange={(e) => props.changeRegion(e.target.value)}/>
                             Oceania
                         </label>
                     </div>    

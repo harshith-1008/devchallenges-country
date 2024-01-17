@@ -22,13 +22,13 @@ export default function MainContent(){
         isEurope: false,
         isAntarctica: false
     })
+    
 
     useEffect(() => {                       //fetching data
         const fetchData = async () => {
             try {
                 const response = await fetch('https://restcountries.com/v3.1/all');
                 const data = await response.json();
-                console.log('Selected Regions:', selectedRegion);
                 const filteredDataRegion = data.filter(country => {
                     return(
                         (!selectedRegion.isAmericas || country.region === "Americas") &&
@@ -39,14 +39,12 @@ export default function MainContent(){
                         (!selectedRegion.isAntarctica || country.region === "Antarctic")
                     )
                 })
-                console.log('Filtered Data Region:', filteredDataRegion)
                 const filteredDataStatus = filteredDataRegion.filter(country => {     // Filter countries based on selectedStatus
                     return (
                         (!selectedStatus.isMemberOfUn || country.unMember) &&
                         (!selectedStatus.isIndependent || country.independent)
                     );
                 });
-                console.log('Filtered Data Status:', filteredDataStatus);
                 const finalData = _.orderBy(filteredDataStatus, [selectedSortingOption], ['desc']); // Sort the filtered data based on selectedSortingOption
                 setCountries(finalData);
             } catch (error) {
@@ -74,11 +72,20 @@ export default function MainContent(){
             [newRegion]: !prev[newRegion]
         }))
     }
+    
     const list = countries.map(count =>{  //rendereing the countries info
+        //capital subregion currencies lngauge continent
+        console.log(count.continent)
         return(
             <Display 
                 img={count.flags.png}
+                capital={count.capital}
+                subregion={count.subregion}
+                currency={count.currencies}
+                language={count.languages}
+                continent={count.continents}
                 name={count.name.common}
+                officalName={count.name.offical}
                 population={count.population}
                 region={count.region}
                 area={count.area}
@@ -86,9 +93,27 @@ export default function MainContent(){
         )
     })
 
+    // const changePage = () => {
+    //     return(
+    //         <Country 
+    //         img={count.flags.png}
+    //         capital={count.capital}
+    //         subregion={count.subregion}
+    //         currency={count.currencies}
+    //         language={count.languages}
+    //         continent={count.continents}
+    //         name={count.name.common}
+    //         officalName={count.name.offical}
+    //         population={count.population}
+    //         region={count.region}
+    //         area={count.area}       
+    //     />
+    //     )  
+    // }
+
     return(
-        <div className="bg-[#1B1D1F] w-4/5 absolute top-[15rem] left-[8rem] rounded-2xl border-[0.063rem] border-[#6C727F] p-12 ">
-            <Navbar noOfCountries={countries.length}/>
+        <div className="bg-[#1B1D1F] w-4/5 absolute top-[15rem] left-[8rem] rounded-2xl border-[0.063rem] border-[#6C727F] p-12">
+            <Navbar noOfCountries={countries.length} />
             <div className="flex flex-row ">
                 <div className="mt-5 w-1/4">
                     <Filters onClick={changeSort} changeStatus={changeStatus} changeRegion={changeRegion} selectedSortingOption={selectedSortingOption}/>
